@@ -232,7 +232,7 @@ const AdminDashboard: React.FC = () => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === 'ClickEats@Admin!2025') {
+    if (password === 'KOHI+KURIO@Admin!2025') {
       setIsAuthenticated(true);
       localStorage.setItem('beracah_admin_auth', 'true');
       setLoginError('');
@@ -273,7 +273,7 @@ const AdminDashboard: React.FC = () => {
                 required
               />
               {loginError && (
-                <p className="text-red-500 text-sm mt-2">{loginError}</p>
+                <p className="text-kohi-coffee text-sm mt-2">{loginError}</p>
               )}
             </div>
             
@@ -503,7 +503,7 @@ const AdminDashboard: React.FC = () => {
                   />
                   <button
                     onClick={() => removeVariation(index)}
-                    className="p-2 text-red-500 hover:text-red-600 hover:bg-red-50 rounded transition-colors duration-200"
+                    className="p-2 text-kohi-coffee hover:text-kohi-dark hover:bg-kohi-cream rounded transition-colors duration-200"
                   >
                     <Trash2 className="h-4 w-4" />
                   </button>
@@ -551,7 +551,7 @@ const AdminDashboard: React.FC = () => {
                   />
                   <button
                     onClick={() => removeAddOn(index)}
-                    className="p-2 text-red-500 hover:text-red-600 hover:bg-red-50 rounded transition-colors duration-200"
+                    className="p-2 text-kohi-coffee hover:text-kohi-dark hover:bg-kohi-cream rounded transition-colors duration-200"
                   >
                     <Trash2 className="h-4 w-4" />
                   </button>
@@ -642,7 +642,7 @@ const AdminDashboard: React.FC = () => {
                   <button
                     onClick={handleBulkRemove}
                     disabled={isProcessing}
-                    className="flex items-center space-x-2 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+                    className="flex items-center space-x-2 bg-kohi-coffee text-kohi-white px-4 py-2 rounded-lg hover:bg-kohi-dark transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-sm"
                   >
                     <Trash2 className="h-4 w-4" />
                     <span>{isProcessing ? 'Removing...' : 'Remove Selected'}</span>
@@ -740,7 +740,7 @@ const AdminDashboard: React.FC = () => {
                         <div className="flex flex-col">
                           {item.isOnDiscount && item.discountPrice ? (
                             <>
-                              <span className="text-red-600 font-semibold">₱{item.discountPrice}</span>
+                              <span className="text-kohi-coffee font-semibold">₱{item.discountPrice}</span>
                               <span className="text-gray-500 line-through text-xs">₱{item.basePrice}</span>
                             </>
                           ) : (
@@ -757,14 +757,14 @@ const AdminDashboard: React.FC = () => {
                       <td className="px-6 py-4">
                         <div className="flex flex-col space-y-1">
                           {item.popular && (
-                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-600 text-white">
+                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-kohi-coffee text-kohi-white">
                               Popular
                             </span>
                           )}
                           <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                             item.available 
                               ? 'bg-green-100 text-green-800' 
-                              : 'bg-red-100 text-red-800'
+                              : 'bg-kohi-cream text-kohi-coffee'
                           }`}>
                             {item.available ? 'Available' : 'Unavailable'}
                           </span>
@@ -782,7 +782,7 @@ const AdminDashboard: React.FC = () => {
                           <button
                             onClick={() => handleDeleteItem(item.id)}
                             disabled={isProcessing}
-                            className="p-2 text-red-400 hover:text-red-600 hover:bg-red-50 rounded transition-colors duration-200"
+                            className="p-2 text-kohi-coffee hover:text-kohi-dark hover:bg-kohi-cream rounded transition-colors duration-200"
                           >
                             <Trash2 className="h-4 w-4" />
                           </button>

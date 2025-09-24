@@ -4,21 +4,22 @@ export default {
   theme: {
     extend: {
       colors: {
-        ramen: {
-          red: '#D7263D',
-          dark: '#0B0A0A',
-          charcoal: '#111113',
-          cream: '#FFF3E0',
-          beige: '#F7E7CE',
-          gold: '#E0A106',
-          sesame: '#D1C7B7',
-          seaweed: '#1F2937',
-          kimchi: '#B81D24'
+        kohi: {
+          // Primary grayscale palette for KOHI + KURIO
+          white: '#FFFFFF',
+          light: '#F8F9FA',
+          gray: '#6C757D',
+          dark: '#343A40',
+          black: '#212529',
+          // Accent colors for coffee theme
+          coffee: '#8B4513',
+          cream: '#F5F5DC',
+          latte: '#D2B48C'
         }
       },
       fontFamily: {
-        'pretendard': ['Pretendard', 'system-ui', 'sans-serif'],
-        'noto-kr': ['Noto Serif KR', 'serif']
+        'inter': ['Inter', 'system-ui', 'sans-serif'],
+        'roboto': ['Roboto', 'sans-serif']
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
