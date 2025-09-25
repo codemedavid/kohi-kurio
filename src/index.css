@@ -3,13 +3,22 @@
 @tailwind utilities;
 
 /* KOHI + KURIO Custom Styles */
-/* Minimal helpers for coffee shop palette when needed outside tailwind tokens */
-.bg-kohi-cream { background-color: #F5F5DC; }
-.bg-kohi-latte { background-color: #D2B48C; }
-.text-kohi-coffee { color: #8B4513; }
-.text-kohi-dark { color: #343A40; }
-.border-kohi-gray { border-color: #6C757D; }
-.ring-kohi-coffee { --tw-ring-color: #8B4513; }
+/* Enhanced sophisticated palette with better contrast and visual appeal */
+.bg-kohi-wall { background-color: #f5f7fa; }
+.bg-kohi-sofa { background-color: #8b7355; }
+.bg-kohi-wood { background-color: #a67c52; }
+.bg-kohi-cream { background-color: #e8d5b7; }
+.bg-kohi-taupe { background-color: #6d5a47; }
+.bg-kohi-warm { background-color: #f4e4bc; }
+.bg-kohi-accent { background-color: #d4af37; }
+.bg-kohi-deep { background-color: #4a3c2a; }
+.text-kohi-dark { color: #2d2d2d; }
+.text-kohi-medium { color: #5a5a5a; }
+.text-kohi-wood { color: #a67c52; }
+.text-kohi-accent { color: #d4af37; }
+.border-kohi-cream { border-color: #e8d5b7; }
+.border-kohi-accent { border-color: #d4af37; }
+.ring-kohi-wood { --tw-ring-color: #a67c52; }
 
 /* Hide scrollbar for mobile nav */
 .scrollbar-hide {

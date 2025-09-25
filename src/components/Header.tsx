@@ -12,12 +12,12 @@ const Header: React.FC<HeaderProps> = ({ cartItemsCount, onCartClick, onMenuClic
   const { siteSettings, loading } = useSiteSettings();
 
   return (
-    <header className="sticky top-0 z-50 bg-kohi-white/90 backdrop-blur-md border-b border-kohi-gray shadow-sm">
+    <header className="sticky top-0 z-50 bg-kohi-white/95 backdrop-blur-md border-b border-kohi-cream shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <button 
             onClick={onMenuClick}
-            className="flex items-center space-x-2 text-kohi-black hover:text-kohi-coffee transition-colors duration-200"
+            className="flex items-center space-x-2 text-kohi-dark hover:text-kohi-accent transition-colors duration-200"
           >
             {loading ? (
               <div className="w-10 h-10 bg-gray-200 rounded-full animate-pulse" />
@@ -25,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({ cartItemsCount, onCartClick, onMenuClic
               <img 
                 src={siteSettings?.site_logo || "/logo.jpg"} 
                 alt={siteSettings?.site_name || "KOHI + KURIO"}
-                className="w-10 h-10 rounded object-cover ring-2 ring-kohi-coffee"
+                className="w-10 h-10 rounded object-cover ring-2 ring-kohi-accent"
                 onError={(e) => {
                   e.currentTarget.src = "/logo.jpg";
                 }}
@@ -43,11 +43,11 @@ const Header: React.FC<HeaderProps> = ({ cartItemsCount, onCartClick, onMenuClic
           <div className="flex items-center space-x-2">
             <button 
               onClick={onCartClick}
-              className="relative p-2 text-kohi-gray hover:text-kohi-black hover:bg-kohi-cream rounded-full transition-all duration-200"
+              className="relative p-2 text-kohi-medium hover:text-kohi-dark hover:bg-kohi-warm rounded-full transition-all duration-200"
             >
               <ShoppingCart className="h-6 w-6" />
               {cartItemsCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-kohi-coffee text-kohi-white text-xs rounded-full h-5 w-5 flex items-center justify-center animate-bounce-gentle">
+                <span className="absolute -top-1 -right-1 bg-kohi-accent text-kohi-white text-xs rounded-full h-5 w-5 flex items-center justify-center animate-bounce-gentle">
                   {cartItemsCount}
                 </span>
               )}

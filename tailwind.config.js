@@ -5,16 +5,24 @@ export default {
     extend: {
       colors: {
         kohi: {
-          // Primary grayscale palette for KOHI + KURIO
+          // Enhanced sophisticated palette with better contrast
           white: '#FFFFFF',
           light: '#F8F9FA',
-          gray: '#6C757D',
-          dark: '#343A40',
-          black: '#212529',
-          // Accent colors for coffee theme
+          // Primary palette - enhanced for better visual appeal
+          wall: '#f5f7fa',        // Lighter, more vibrant background
+          sofa: '#8b7355',        // Warmer, richer greige
+          wood: '#a67c52',        // Richer brown wood
+          cream: '#e8d5b7',       // Warmer, more vibrant cream
+          taupe: '#6d5a47',       // Deeper, more sophisticated taupe
+          // Enhanced text colors
+          dark: '#2d2d2d',        // Stronger dark for better contrast
+          medium: '#5a5a5a',      // Better contrast medium gray
+          // Vibrant accent colors
           coffee: '#8B4513',
-          cream: '#F5F5DC',
-          latte: '#D2B48C'
+          latte: '#D4AF37',       // Golden latte
+          accent: '#d4af37',      // Golden accent
+          warm: '#f4e4bc',        // Warm cream
+          deep: '#4a3c2a'         // Deep brown for strong accents
         }
       },
       fontFamily: {

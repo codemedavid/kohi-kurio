@@ -93,9 +93,9 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
 
   return (
     <>
-      <div className={`bg-kohi-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group animate-scale-in border border-kohi-gray ${!item.available ? 'opacity-60' : ''}`}>
+      <div className={`bg-kohi-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group animate-scale-in border border-kohi-cream ${!item.available ? 'opacity-60' : ''}`}>
         {/* Image Container with Badges */}
-        <div className="relative h-48 bg-gradient-to-br from-kohi-cream to-kohi-latte">
+        <div className="relative h-48 bg-gradient-to-br from-kohi-warm to-kohi-cream">
           {item.image ? (
             <img
               src={item.image}
@@ -116,26 +116,26 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
           {/* Badges */}
           <div className="absolute top-3 left-3 flex flex-col gap-2">
             {item.isOnDiscount && item.discountPrice && (
-              <div className="bg-gradient-to-r from-kohi-coffee to-kohi-dark text-kohi-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg animate-pulse">
+              <div className="bg-gradient-to-r from-kohi-accent to-kohi-wood text-kohi-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg animate-pulse">
                 SALE
               </div>
             )}
             {item.popular && (
-              <div className="bg-gradient-to-r from-kohi-latte to-kohi-coffee text-kohi-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+              <div className="bg-gradient-to-r from-kohi-accent to-kohi-coffee text-kohi-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
                 ⭐ POPULAR
               </div>
             )}
           </div>
           
           {!item.available && (
-            <div className="absolute top-3 right-3 bg-kohi-dark text-kohi-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+            <div className="absolute top-3 right-3 bg-kohi-deep text-kohi-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
               UNAVAILABLE
             </div>
           )}
           
           {/* Discount Percentage Badge */}
           {item.isOnDiscount && item.discountPrice && (
-            <div className="absolute bottom-3 right-3 bg-kohi-white/90 backdrop-blur-sm text-kohi-coffee text-xs font-bold px-2 py-1 rounded-full shadow-lg">
+            <div className="absolute bottom-3 right-3 bg-kohi-white/95 backdrop-blur-sm text-kohi-accent text-xs font-bold px-2 py-1 rounded-full shadow-lg">
               {Math.round(((item.basePrice - item.discountPrice) / item.basePrice) * 100)}% OFF
             </div>
           )}
@@ -144,15 +144,15 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
         {/* Content */}
         <div className="p-5">
           <div className="flex items-start justify-between mb-3">
-            <h4 className="text-lg font-semibold text-kohi-black leading-tight flex-1 pr-2">{item.name}</h4>
+            <h4 className="text-lg font-semibold text-kohi-dark leading-tight flex-1 pr-2">{item.name}</h4>
             {item.variations && item.variations.length > 0 && (
-              <div className="text-xs text-kohi-gray bg-kohi-cream px-2 py-1 rounded-full whitespace-nowrap">
+              <div className="text-xs text-kohi-medium bg-kohi-cream px-2 py-1 rounded-full whitespace-nowrap">
                 {item.variations.length} sizes
               </div>
             )}
           </div>
           
-          <p className={`text-sm mb-4 leading-relaxed ${!item.available ? 'text-kohi-gray' : 'text-kohi-gray'}`}>
+          <p className={`text-sm mb-4 leading-relaxed ${!item.available ? 'text-kohi-medium' : 'text-kohi-medium'}`}>
             {!item.available ? 'Currently Unavailable' : item.description}
           </p>
           
@@ -162,25 +162,25 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
               {item.isOnDiscount && item.discountPrice ? (
                 <div className="space-y-1">
                   <div className="flex items-center space-x-2">
-                    <span className="text-2xl font-bold text-kohi-coffee">
+                    <span className="text-2xl font-bold text-kohi-accent">
                       ₱{item.discountPrice.toFixed(2)}
                     </span>
-                    <span className="text-sm text-kohi-gray line-through">
+                    <span className="text-sm text-kohi-medium line-through">
                       ₱{item.basePrice.toFixed(2)}
                     </span>
                   </div>
-                  <div className="text-xs text-kohi-gray">
+                  <div className="text-xs text-kohi-medium">
                     Save ₱{(item.basePrice - item.discountPrice).toFixed(2)}
                   </div>
                 </div>
               ) : (
-                <div className="text-2xl font-bold text-kohi-black">
+                <div className="text-2xl font-bold text-kohi-wood">
                   ₱{item.basePrice.toFixed(2)}
                 </div>
               )}
               
               {item.variations && item.variations.length > 0 && (
-                <div className="text-xs text-kohi-gray mt-1">
+                <div className="text-xs text-kohi-medium mt-1">
                   Starting price
                 </div>
               )}
@@ -191,31 +191,31 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
               {!item.available ? (
                 <button
                   disabled
-                  className="bg-kohi-gray text-kohi-white px-4 py-2.5 rounded-xl cursor-not-allowed font-medium text-sm"
+                  className="bg-kohi-sofa text-kohi-white px-4 py-2.5 rounded-xl cursor-not-allowed font-medium text-sm"
                 >
                   Unavailable
                 </button>
               ) : quantity === 0 ? (
                 <button
                   onClick={handleAddToCart}
-                  className="bg-gradient-to-r from-kohi-coffee to-kohi-dark text-kohi-white px-6 py-2.5 rounded-xl hover:from-kohi-dark hover:to-kohi-black transition-all duration-200 transform hover:scale-105 font-medium text-sm shadow-lg hover:shadow-xl"
+                  className="bg-gradient-to-r from-kohi-accent to-kohi-wood text-kohi-white px-6 py-2.5 rounded-xl hover:from-kohi-wood hover:to-kohi-coffee transition-all duration-200 transform hover:scale-105 font-medium text-sm shadow-lg hover:shadow-xl"
                 >
                   {item.variations?.length || item.addOns?.length ? 'Customize' : 'Add to Cart'}
                 </button>
               ) : (
-                <div className="flex items-center space-x-2 bg-gradient-to-r from-kohi-cream to-kohi-latte rounded-xl p-1 border border-kohi-coffee">
+                <div className="flex items-center space-x-2 bg-gradient-to-r from-kohi-warm to-kohi-cream rounded-xl p-1 border border-kohi-accent">
                   <button
                     onClick={handleDecrement}
-                    className="p-2 hover:bg-kohi-coffee hover:text-kohi-white rounded-lg transition-colors duration-200 hover:scale-110"
+                    className="p-2 hover:bg-kohi-accent hover:text-kohi-white rounded-lg transition-colors duration-200 hover:scale-110"
                   >
-                    <Minus className="h-4 w-4 text-kohi-black" />
+                    <Minus className="h-4 w-4 text-kohi-wood" />
                   </button>
-                  <span className="font-bold text-kohi-black min-w-[28px] text-center text-sm">{quantity}</span>
+                  <span className="font-bold text-kohi-dark min-w-[28px] text-center text-sm">{quantity}</span>
                   <button
                     onClick={handleIncrement}
-                    className="p-2 hover:bg-kohi-coffee hover:text-kohi-white rounded-lg transition-colors duration-200 hover:scale-110"
+                    className="p-2 hover:bg-kohi-accent hover:text-kohi-white rounded-lg transition-colors duration-200 hover:scale-110"
                   >
-                    <Plus className="h-4 w-4 text-kohi-black" />
+                    <Plus className="h-4 w-4 text-kohi-wood" />
                   </button>
                 </div>
               )}
@@ -224,7 +224,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
 
           {/* Add-ons indicator */}
           {item.addOns && item.addOns.length > 0 && (
-            <div className="flex items-center space-x-1 text-xs text-kohi-gray bg-kohi-cream px-2 py-1 rounded-lg">
+            <div className="flex items-center space-x-1 text-xs text-kohi-medium bg-kohi-cream px-2 py-1 rounded-lg">
               <span>+</span>
               <span>{item.addOns.length} add-on{item.addOns.length > 1 ? 's' : ''} available</span>
             </div>
